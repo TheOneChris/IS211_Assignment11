@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{ name }}'s list</title>
+  </head>
+
+
+  <body>
+    <h2>To Do {{ day }}:</h2>
+    <ol>
+
+{%for i in list%}
+
+    <li>{{i.task}} {{i.email}} {{i.level}}</li>
+{%endfor%}
+    </ol>
+    <table>
+        <form action="submit" method="post">
+        <tr>
+            <th>Task: <input type="text" name="task"></input></th>
+             <th>Email: <input type="text" name="email"></input></th>
+            <th><select name="Priority">
+  <option value="Select Priority Level">Select Priority Level</option>
+  <option value="Low">Low</option>
+  <option value="Medium">Medium</option>
+  <option value="High">High</option>
+
+</select>
+        <input type="submit" value="Add To Do Item"></th>
+
+
+        </tr>
+             </form>
+         <form action="clear" method="post">
+        <tr>
+
+        <input type="submit" value="Clear">
+
+
+        </tr>
+             </form>
+
+    </table>
+
+  </body>
+</html>
